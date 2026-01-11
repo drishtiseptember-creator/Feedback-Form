@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    </title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <style>
+    .question{
+      font-family:Oxanium ;
+    }
+    .step {
+    display: none;
+    margin-bottom: 20px;
+  }
+
+  .step.active {
+    display: block;
+  }
+</style>
+  <body>
+    <form>
+      <div class="step active">
+        <p class="start">Hope you enjoyed our serivce! Help us improve by filling a form.</p>
+        <button type="button" onclick="nextStep()" class="button" id="continue" >Continue</button>
+
+      </div>
+    <div class="step">
+    <p class="question" id="1"> Was the interface easy to understand and navigate?<br>
+</p>
+<button type="button" onclick="nextStep()" class="button" id="11" >Yes</button>
+<button type="button" onclick="nextStep()" class="button" id="12" >No</button>
+</div>
+
+<div class="step">
+
+<p class="question" id="2">Did you face any difficulties while using the roadmap or itinerary?
+<br></p>
+<button type="button" onclick="nextStep()" class="button" id="21" >Yes</button>
+<button type="button" onclick="nextStep()" class="button" id="22" >No</button>
+</div>
+
+<div class="step">
+<p class="question" id="3">Were the travel times and distances accurate?
+<br></p>
+<button type="button" onclick="nextStep()" class="button" id="31" >Yes</button>
+<button type="button" onclick="nextStep()" class="button" id="32" >No</button>
+</div>
+
+<div class="step">
+<p class="question" id="4">Were there any missing or incorrect details in the roadmap?
+<br></p>
+<button type="button" onclick="nextStep()" class="button" id="41" >Yes</button>
+<button type="button" onclick="nextStep()" class="button" id="42" >No</button>
+</div>
+
+<div class="step">
+<p class="question" id="5">Did you feel the itinerary was balanced (not rushed or too slow)?
+<br></p>
+<button type="button" onclick="nextStep()" class="button" id="51" >Balanced</button>
+<button type="button" onclick="nextStep()" class="button" id="52" >Rushed</button>
+<button type="button" onclick="nextStep()" class="button" id="53" >Slow</button>
+</div>
+
+<div class="step">
+<p class="question" id="6">Did you discover places you wouldn’t have found otherwise?
+<br></p>
+<button type="button" onclick="nextStep()" class="button" id="61" >Yes</button>
+<button type="button" onclick="nextStep()" class="button" id="62" >No</button>
+</div>
+
+<div class="step">
+<p class="question" id="7">What can we improve to make your next trip better?<br>
+</p><input type="text" id="question7" placeholder="enter your suggestions here">
+<button type="button" onclick="nextStep()" class="button" id="71">Done</button>
+</div>
+
+<div class="step">
+<p class="question" id="8">Would you like to receive personalized trip suggestions in the future?
+<br></p>
+<button type="button" onclick="nextStep()" class="button" id="81" >Yes</button>
+<button type="button" onclick="nextStep()" class="button" id="82" >No</button>
+</div>
+
+<div class="step">
+<p class="question" id="9">Would you recommend us to friends or family?
+<br></p>
+<button type="button" onclick="nextStep()" class="button" id="91" >Yes</button>
+<button type="button" onclick="nextStep()" class="button" id="92" >No</button>
+</div>
+
+<div class="step">
+  <p class="end">Thank you for your valuable feedback!!</p>
+</div>
+
+</form>
+<script>
+  let currentStep = 0;
+  const steps = document.querySelectorAll(".step");
+
+  function nextStep() {
+    steps[currentStep].classList.remove("active");
+    currentStep++;
+
+    if (currentStep < steps.length) {
+      steps[currentStep].classList.add("active");
+    }
+  }
+</script>
+
+  </body>
+
+
+</html>
